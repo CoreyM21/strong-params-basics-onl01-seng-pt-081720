@@ -17,11 +17,11 @@ def create
   redirect_to post_path(@post)
 end
 
-	def update
+def update
   @post = Post.find(params[:id])
-  @post.update(params.require(:post).permit(:title))
+  @post.update(post_params)
   redirect_to post_path(@post)
-  end
+end
 
 	def edit
 	  @post = Post.find(params[:id])
